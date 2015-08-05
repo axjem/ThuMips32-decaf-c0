@@ -1,0 +1,5 @@
+*** Error at (1,13): illegal newline in string constant "st"
+*** Error at (6,6): illegal newline in string constant "x"
+*** Error at (6,6): illegal multiple characters in char constant "x\t\t"
+*** Error at (8,9): unterminated string constant "str"
+*** Error at (8,13): syntax error

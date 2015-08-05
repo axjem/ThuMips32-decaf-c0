@@ -1,0 +1,6 @@
+*** Error: no legal main function named 'main' was found
+*** Error at (11,27): incompatible operands: char* * int
+*** Error at (12,15): subscript must be an integer
+*** Error at (14,5): */[] can only be applied to pointer
+*** Error at (15,9): */[] can only be applied to pointer
+*** Error at (15,9): subscript must be an integer

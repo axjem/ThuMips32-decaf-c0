@@ -1,0 +1,28 @@
+program
+    control line define var
+        intconst 10
+    func main voidtype
+        formals
+        stmtblock
+            vardef inttype
+                 a
+            assign
+                varref a
+                intconst 10
+            switch 
+                varref a
+                case condition:
+                    intconst 10
+                case stmt : 
+                    vardef floattype
+                         x
+                    assign
+                        varref x
+                        floatconst 0.23
+                    break
+                default : 
+                    assign
+                        varref a
+                        intconst 34
+            printf
+                varref a

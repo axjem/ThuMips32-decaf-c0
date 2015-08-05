@@ -1,0 +1,3 @@
+*** Error at (3,9): switch condition must be of int type
+*** Error at (4,8): switch condition must be of int type
+*** Error at (7,8): switch condition must be of int type

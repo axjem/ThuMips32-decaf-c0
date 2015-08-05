@@ -1,0 +1,17 @@
+GLOBAL SCOPE:
+    null -> variable  : void*
+    (1,5) -> variable a : int
+    (2,8) -> variable b : char**
+    (4,6) -> function tester : int, returntype int*
+    (9,6) -> function start : returntype void
+    (26,6) -> function main : returntype void
+    FORMAL SCOPE OF 'tester':
+        (4,17) -> variable @d : int
+        LOCAL SCOPE:
+    FORMAL SCOPE OF 'start':
+        LOCAL SCOPE:
+            (10,9) -> variable a : int
+            (11,10) -> variable b : bool
+            (12,10) -> variable d : int*
+    FORMAL SCOPE OF 'main':
+        LOCAL SCOPE:

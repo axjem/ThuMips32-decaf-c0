@@ -1,0 +1,9 @@
+GLOBAL SCOPE:
+    null -> variable  : void*
+    (4,5) -> function get : int, returntype int
+    (6,6) -> function main : returntype void
+    FORMAL SCOPE OF 'get':
+        (4,13) -> variable @index : int
+    FORMAL SCOPE OF 'main':
+        LOCAL SCOPE:
+            (7,9) -> variable i : int

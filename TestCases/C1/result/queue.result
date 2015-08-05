@@ -1,0 +1,217 @@
+program
+    control line define limit
+        intconst 10
+    condef inttype
+    init: limit2 = intconst 4
+    condef inttype
+    init: limit3 = intconst 17
+    func init_QueueItem voidtype
+        formals
+            formaldef inttype* host
+            formaldef inttype data
+            formaldef inttype* next
+            formaldef inttype* prev
+        stmtblock
+            assign
+                indexed
+                    varref host
+                    intconst 0
+                varref data
+            assign
+                indexed
+                    varref host
+                    intconst 1
+                typecast
+                    inttype
+                    varref next
+            assign
+                indexed
+                    varref host
+                    intconst 2
+                typecast
+                    inttype
+                    varref prev
+            assign
+                indexed
+                    varref next
+                    intconst 2
+                typecast
+                    inttype
+                    varref host
+            assign
+                indexed
+                    varref prev
+                    intconst 1
+                typecast
+                    inttype
+                    varref host
+    vardef inttype
+         sp
+    vardef inttype
+        * head
+    declare: func init_Queue voidtype
+        formals
+    declare: func enqueue voidtype
+        formals
+            formaldef inttype i
+    declare: func dequeue inttype
+        formals
+    func main voidtype
+        formals
+        stmtblock
+            vardef inttype
+                 i
+            call init_Queue
+            for
+                assign
+                    varref i
+                    intconst 0
+                les
+                    varref i
+                    varref limit
+                suffix_self_add
+                    varref i
+                call enqueue
+                    varref i
+            for
+                assign
+                    varref i
+                    intconst 0
+                les
+                    varref i
+                    varref limit2
+                add_equal
+                    varref i
+                    intconst 1
+                printf
+                    call dequeue
+                    stringconst " "
+            printf
+                stringconst "\n"
+            for
+                assign
+                    varref i
+                    intconst 0
+                les
+                    varref i
+                    varref limit
+                prefix_self_add
+                    varref i
+                call enqueue
+                    varref i
+            for
+                assign
+                    varref i
+                    intconst 0
+                les
+                    varref i
+                    varref limit3
+                assign
+                    varref i
+                    add
+                        varref i
+                        intconst 1
+                printf
+                    call dequeue
+                    stringconst " "
+            printf
+                stringconst "\n"
+    func init_Queue voidtype
+        formals
+        stmtblock
+            assign
+                varref head
+                typecast
+                    inttype*
+                    malloc
+                        add
+                            sizeof ( inttype )
+                            mul
+                                intconst 2
+                                sizeof ( inttype* )
+            call init_QueueItem
+                varref head
+                intconst 0
+                varref head
+                varref head
+    func enqueue voidtype
+        formals
+            formaldef inttype i
+        stmtblock
+            vardef inttype
+                * temp
+                 init: typecast
+                    inttype*
+                    malloc
+                        add
+                            sizeof ( inttype )
+                            mul
+                                intconst 2
+                                sizeof ( inttype* )
+            call init_QueueItem
+                varref temp
+                varref i
+                typecast
+                    inttype*
+                    indexed
+                        varref head
+                        intconst 1
+                varref head
+    func dequeue inttype
+        formals
+        stmtblock
+            if
+                equ
+                    typecast
+                        inttype
+                        typecast
+                            inttype*
+                            indexed
+                                varref head
+                                intconst 2
+                    typecast
+                        inttype
+                        varref head
+                stmtblock
+                    printf
+                        stringconst "Queue Is Empty"
+                    return
+                        intconst 0
+            else
+                stmtblock
+                    vardef inttype
+                        * temp
+                         init: typecast
+                            inttype*
+                            indexed
+                                varref head
+                                intconst 2
+                    vardef inttype
+                         val
+                         init: indexed
+                            varref temp
+                            intconst 0
+                    assign
+                        indexed
+                            typecast
+                                inttype*
+                                indexed
+                                    varref temp
+                                    intconst 2
+                            intconst 1
+                        indexed
+                            varref temp
+                            intconst 1
+                    assign
+                        indexed
+                            typecast
+                                inttype*
+                                indexed
+                                    varref temp
+                                    intconst 1
+                            intconst 2
+                        indexed
+                            varref temp
+                            intconst 2
+                    return
+                        varref val

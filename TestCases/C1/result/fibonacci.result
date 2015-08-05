@@ -1,0 +1,42 @@
+program
+    declare: func get inttype
+        formals
+            formaldef inttype index
+    func main voidtype
+        formals
+        stmtblock
+            vardef inttype
+                 i
+                 init: intconst 0
+            while
+                les
+                    varref i
+                    intconst 10
+                stmtblock
+                    printf
+                        call get
+                            varref i
+                        stringconst "\n"
+                    suffix_self_add
+                        varref i
+    func get inttype
+        formals
+            formaldef inttype index
+        stmtblock
+            if
+                les
+                    varref index
+                    intconst 2
+                stmtblock
+                    return
+                        intconst 1
+            return
+                add
+                    call get
+                        sub
+                            varref index
+                            intconst 1
+                    call get
+                        sub
+                            varref index
+                            intconst 2

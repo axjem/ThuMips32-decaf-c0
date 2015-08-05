@@ -1,0 +1,10 @@
+*** Error at (8,2): incompatible operands: const int += int
+*** Error at (9,2): incompatible operands: const int = int
+*** Error at (10,2): incompatible operands: const int -= int
+*** Error at (11,2): incompatible operands: const int = int
+*** Error at (12,2): incompatible operands: const float += const int
+*** Error at (13,2): incompatible operands: const char* = char*
+*** Error at (14,2): incompatible operands: const char = char
+*** Error at (15,2): incompatible operands: const char = char*
+*** Error at (16,2): incompatible operands: const bool = bool
+*** Error at (18,2): incompatible operands: char* = const char*

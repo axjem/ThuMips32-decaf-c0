@@ -1,0 +1,17 @@
+GLOBAL SCOPE:
+    null -> variable  : void*
+    (1,5) -> variable sp : int
+    (2,6) -> variable elems : int*
+    (4,6) -> function Push : int, returntype void
+    (5,6) -> function Init : returntype void
+    (6,5) -> function Pop : returntype int
+    (25,5) -> function NumElems : returntype int
+    (29,6) -> function main : returntype void
+    FORMAL SCOPE OF 'Push':
+        (4,15) -> variable @i : int
+    FORMAL SCOPE OF 'Init':
+    FORMAL SCOPE OF 'Pop':
+    FORMAL SCOPE OF 'NumElems':
+        LOCAL SCOPE:
+    FORMAL SCOPE OF 'main':
+        LOCAL SCOPE:

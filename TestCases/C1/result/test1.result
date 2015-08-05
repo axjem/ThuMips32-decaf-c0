@@ -1,0 +1,67 @@
+program
+    func foo inttype*
+        formals
+            formaldef inttype y
+        stmtblock
+            vardef floattype
+                * q
+                 a
+                ** b
+            vardef inttype
+                 i
+                 init: intconst 0
+            assign
+                varref q
+                typecast
+                    floattype*
+                    malloc
+                        mul
+                            varref y
+                            sizeof ( floattype )
+            while
+                les
+                    varref i
+                    varref y
+                stmtblock
+                    assign
+                        indexed
+                            varref q
+                            varref i
+                        varref i
+                    suffix_self_add
+                        varref i
+            return
+                varref q
+    func main voidtype
+        formals
+        stmtblock
+            condef booltype
+            init: b = boolconst true
+            init: c = boolconst false
+            vardef floattype
+                 d range: intconst 10
+                *** e range: intconst 10
+            vardef chartype
+                * str
+                 init: stringconst "hello"
+            assign
+                indexed
+                    varref d
+                    intconst 0
+                floatconst 0.1
+            if
+                varref b
+                if
+                    varref b
+                    assign
+                        varref b
+                        boolconst false
+                else
+                    assign
+                        varref b
+                        boolconst true
+            return
+                indexed
+                    call foo
+                        intconst 5
+                    intconst 1

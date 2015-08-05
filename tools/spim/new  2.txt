@@ -1,0 +1,10 @@
+float to int
+=======
+cvt.w.s $f4, $f4
+mfc1 $t0,$f4
+
+
+int to float
+=======
+mtc1 $t0, $f0
+cvt.s.w $f0, $f0

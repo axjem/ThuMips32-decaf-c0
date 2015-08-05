@@ -1,0 +1,23 @@
+GLOBAL SCOPE:
+    null -> variable  : void*
+    (1,5) -> function lengthOf : char*, returntype int
+    (9,6) -> function strcmp : char*, char*, returntype bool
+    (22,6) -> function printCompareString : char*, char*, returntype void
+    (26,6) -> function main : returntype void
+    FORMAL SCOPE OF 'lengthOf':
+        (1,20) -> variable @s : char*
+        LOCAL SCOPE:
+            (2,6) -> variable l : int
+    FORMAL SCOPE OF 'strcmp':
+        (9,19) -> variable @a : char*
+        (9,28) -> variable @b : char*
+        LOCAL SCOPE:
+            (13,6) -> variable i : int
+    FORMAL SCOPE OF 'printCompareString':
+        (22,31) -> variable @a : char*
+        (22,40) -> variable @b : char*
+        LOCAL SCOPE:
+    FORMAL SCOPE OF 'main':
+        LOCAL SCOPE:
+            (30,8) -> variable str1 : char*
+            (30,15) -> variable str2 : char*

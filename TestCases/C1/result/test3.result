@@ -1,0 +1,54 @@
+program
+    func foo inttype
+        formals
+            formaldef inttype x
+            formaldef inttype y
+            formaldef inttype z
+        stmtblock
+            return
+                div
+                    add
+                        add
+                            varref x
+                            varref y
+                        varref z
+                    intconst 3
+    func method inttype
+        formals
+        stmtblock
+            vardef inttype
+                 x
+            vardef inttype
+                 y
+            vardef inttype
+                 z
+            assign
+                varref x
+                intconst 3
+            assign
+                varref y
+                add
+                    varref x
+                    mul
+                        varref x
+                        varref x
+            assign
+                varref z
+                mod
+                    sub
+                        varref x
+                        div
+                            varref y
+                            varref x
+                    varref y
+            return
+                call foo
+                    varref x
+                    varref y
+                    varref z
+    func main voidtype
+        formals
+        stmtblock
+            call method
+            return
+                intconst 0

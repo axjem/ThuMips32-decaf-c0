@@ -1,0 +1,5 @@
+*** Error at (6,14): incompatible operands: int - bool
+*** Error at (10,12): function 'add' expects 2 argument(s) but 1 given
+*** Error at (12,33): incompatible operands: int * bool
+*** Error at (14,12): incompatible argument 2: int given, bool expected
+*** Error at (15,5): method 'mul' not found

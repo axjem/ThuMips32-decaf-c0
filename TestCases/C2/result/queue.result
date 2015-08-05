@@ -1,0 +1,25 @@
+GLOBAL SCOPE:
+    null -> variable  : void*
+    (1,9) -> variable limit : const int
+    (2,11) -> variable limit2 : const int
+    (3,11) -> variable limit3 : const int
+    (5,6) -> function init_QueueItem : int*, int, int*, int*, returntype void
+    (13,5) -> variable sp : int
+    (14,6) -> variable head : int*
+    (16,6) -> function init_Queue : returntype void
+    (17,6) -> function enqueue : int, returntype void
+    (18,5) -> function dequeue : returntype int
+    (20,6) -> function main : returntype void
+    FORMAL SCOPE OF 'init_QueueItem':
+        (5,26) -> variable @host : int*
+        (5,36) -> variable @data : int
+        (5,47) -> variable @next : int*
+        (5,58) -> variable @prev : int*
+        LOCAL SCOPE:
+    FORMAL SCOPE OF 'init_Queue':
+    FORMAL SCOPE OF 'enqueue':
+        (17,18) -> variable @i : int
+    FORMAL SCOPE OF 'dequeue':
+    FORMAL SCOPE OF 'main':
+        LOCAL SCOPE:
+            (21,9) -> variable i : int

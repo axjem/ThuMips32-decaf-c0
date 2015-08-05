@@ -1,0 +1,133 @@
+program
+    func abs inttype
+        formals
+            formaldef inttype a
+        stmtblock
+            if
+                geq
+                    varref a
+                    intconst 0
+                stmtblock
+                    return
+                        varref a
+            else
+                stmtblock
+                    return
+                        neg
+                            varref a
+    func pow inttype
+        formals
+            formaldef inttype a
+            formaldef inttype b
+        stmtblock
+            vardef inttype
+                 i
+                 result
+                 init: intconst 1
+            for
+                assign
+                    varref i
+                    intconst 0
+                les
+                    varref i
+                    varref b
+                suffix_self_add
+                    varref i
+                stmtblock
+                    assign
+                        varref result
+                        mul
+                            varref result
+                            varref a
+            return
+                varref result
+    func log inttype
+        formals
+            formaldef inttype a
+        stmtblock
+            if
+                les
+                    varref a
+                    intconst 1
+                stmtblock
+                    return
+                        neg
+                            intconst 1
+            vardef inttype
+                 result
+                 init: intconst 0
+            while
+                gtr
+                    varref a
+                    intconst 1
+                stmtblock
+                    add_equal
+                        varref result
+                        pos
+                            intconst 1
+                    assign
+                        varref a
+                        div
+                            varref a
+                            intconst 2
+            return
+                varref result
+    func max inttype
+        formals
+            formaldef inttype a
+            formaldef inttype b
+        stmtblock
+            if
+                gtr
+                    varref a
+                    varref b
+                stmtblock
+                    return
+                        varref a
+            else
+                stmtblock
+                    return
+                        varref b
+    func min inttype
+        formals
+            formaldef inttype a
+            formaldef inttype b
+        stmtblock
+            if
+                les
+                    varref a
+                    varref b
+                stmtblock
+                    return
+                        varref a
+            else
+                stmtblock
+                    return
+                        varref b
+    func main voidtype
+        formals
+        stmtblock
+            printf
+                call abs
+                    neg
+                        intconst 1
+                stringconst "\n"
+            printf
+                call pow
+                    intconst 2
+                    intconst 3
+                stringconst "\n"
+            printf
+                call log
+                    intconst 16
+                stringconst "\n"
+            printf
+                call max
+                    intconst 1
+                    intconst 2
+                stringconst "\n"
+            printf
+                call min
+                    intconst 1
+                    intconst 2
+                stringconst "\n"

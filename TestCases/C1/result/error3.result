@@ -1,0 +1,14 @@
+program
+    func main voidtype
+        formals
+        stmtblock
+            condef inttype
+            init: j = intconst 0
+            vardef inttype
+                 i
+                 init: intconst 0
+            assign
+                varref i
+                add
+                    varref i
+                    intconst 1

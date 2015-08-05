@@ -1,0 +1,2 @@
+*** Error at (3,11): illegal newline in string constant "string"
+*** Error at (5,11): illegal multiple characters in char constant "xx"

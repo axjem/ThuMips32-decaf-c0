@@ -1,0 +1,19 @@
+program
+    func main voidtype
+        formals
+        stmtblock
+            vardef chartype
+                * s
+            assign
+                varref s
+                typecast
+                    chartype*
+                    malloc
+                        mul
+                            intconst 10
+                            sizeof ( chartype )
+            assign
+                varref s
+                stringconst "\\\"\n"
+            return
+                intconst 0

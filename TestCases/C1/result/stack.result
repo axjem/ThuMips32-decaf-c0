@@ -1,0 +1,79 @@
+program
+    vardef inttype
+         sp
+    vardef inttype
+        * elems
+    declare: func Push voidtype
+        formals
+            formaldef inttype i
+    declare: func Init voidtype
+        formals
+    declare: func Pop inttype
+        formals
+    func Init voidtype
+        formals
+        stmtblock
+            assign
+                varref elems
+                typecast
+                    inttype*
+                    malloc
+                        mul
+                            intconst 100
+                            sizeof ( inttype )
+            assign
+                varref sp
+                intconst 0
+            call Push
+                intconst 3
+    func Push voidtype
+        formals
+            formaldef inttype i
+        stmtblock
+            assign
+                indexed
+                    add
+                        varref elems
+                        varref sp
+                varref i
+            prefix_self_add
+                varref sp
+    func Pop inttype
+        formals
+        stmtblock
+            vardef inttype
+                 val
+                 init: indexed
+                    varref elems
+                    sub
+                        varref sp
+                        intconst 1
+            suffix_self_sub
+                varref sp
+            return
+                varref val
+    func NumElems inttype
+        formals
+        stmtblock
+            return
+                varref sp
+    func main voidtype
+        formals
+        stmtblock
+            call Init
+            call Push
+                intconst 3
+            call Push
+                intconst 7
+            call Push
+                intconst 4
+            printf
+                call NumElems
+                stringconst " "
+                call Pop
+                stringconst " "
+                call Pop
+                stringconst " "
+                call Pop
+                stringconst " "
+                call NumElems

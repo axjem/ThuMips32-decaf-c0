@@ -1,0 +1,31 @@
+GLOBAL SCOPE:
+    null -> variable  : void*
+    (1,5) -> function abs : int, returntype int
+    (9,5) -> function pow : int, int, returntype int
+    (17,7) -> function log : int, returntype float
+    (29,7) -> function max : float, int, returntype float
+    (37,7) -> function min : float, int, returntype float
+    (45,6) -> function main : returntype void
+    FORMAL SCOPE OF 'abs':
+        (1,13) -> variable @a : int
+        LOCAL SCOPE:
+    FORMAL SCOPE OF 'pow':
+        (9,13) -> variable @a : int
+        (9,20) -> variable @b : int
+        LOCAL SCOPE:
+            (10,9) -> variable i : int
+            (10,12) -> variable result : int
+    FORMAL SCOPE OF 'log':
+        (17,15) -> variable @a : int
+        LOCAL SCOPE:
+            (21,9) -> variable result : int
+    FORMAL SCOPE OF 'max':
+        (29,17) -> variable @a : float
+        (29,24) -> variable @b : int
+        LOCAL SCOPE:
+    FORMAL SCOPE OF 'min':
+        (37,17) -> variable @a : float
+        (37,24) -> variable @b : int
+        LOCAL SCOPE:
+    FORMAL SCOPE OF 'main':
+        LOCAL SCOPE:

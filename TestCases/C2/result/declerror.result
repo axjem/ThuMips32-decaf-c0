@@ -1,0 +1,7 @@
+*** Error at (6,5): declaration of 'A' here conflicts with earlier declaration at (3,5)
+*** Error at (17,2): 'func' is not a method
+*** Error at (20,5): declaration of 'func' here conflicts with earlier declaration at (1,5)
+*** Error at (21,2): incompatible return: bool given, int expected
+*** Error at (29,5): declaration of 'func3' here conflicts with earlier declaration at (12,6)
+*** Error at (46,8): declaration of 'x' here conflicts with earlier declaration at (43,8)
+*** Error at (49,2): incompatible return: int given, void expected

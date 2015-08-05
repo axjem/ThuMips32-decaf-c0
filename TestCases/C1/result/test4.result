@@ -1,0 +1,63 @@
+program
+    control line define str
+        stringconst "this is a string"
+    control line define c
+        charconst "c"
+    func main voidtype
+        formals
+        stmtblock
+            vardef inttype
+                 var
+            assign
+                varref var
+                intconst 10
+            prefix_self_add
+                varref var
+            suffix_self_sub
+                varref var
+            vardef inttype
+                ** x
+            assign
+                varref x
+                typecast
+                    inttype**
+                    malloc
+                        mul
+                            intconst 20
+                            sizeof ( inttype* )
+            vardef inttype
+                 i
+            for
+                assign
+                    varref i
+                    intconst 0
+                les
+                    varref i
+                    intconst 20
+                suffix_self_add
+                    varref i
+                stmtblock
+                    assign
+                        indexed
+                            varref x
+                            varref i
+                        typecast
+                            inttype*
+                            malloc
+                                mul
+                                    intconst 30
+                                    sizeof ( inttype )
+            add
+                prefix_self_add
+                    varref var
+                intconst 1
+            add
+                suffix_self_add
+                    varref var
+                varref var
+            printf
+                varref str
+                varref c
+                varref var
+            return
+                intconst 0

@@ -1,0 +1,25 @@
+*** Error at (7,6): */[] can only be applied to pointer
+*** Error at (8,5): incompatible operands: char = int
+*** Error at (9,5): incompatible operands: bool = int
+*** Error at (10,5): incompatible operands: char = bool
+*** Error at (12,11): incompatible operands: int - bool
+*** Error at (13,5): incompatible operands: char = int
+*** Error at (13,11): incompatible operands: char * bool
+*** Error at (14,5): incompatible operands: bool = int
+*** Error at (14,11): incompatible operands: bool / bool
+*** Error at (15,11): incompatible operands: int % bool
+*** Error at (16,9): incompatible operand: ! int
+*** Error at (17,11): incompatible operands: bool && int
+*** Error at (18,11): incompatible operands: bool || char
+*** Error at (20,2): undeclared variable 'Main'
+*** Error at (21,9): undeclared variable '123main'
+*** Error at (22,11): incompatible operands: int > bool
+*** Error at (23,11): incompatible operands: int >= bool
+*** Error at (24,11): incompatible operands: int < bool
+*** Error at (25,11): incompatible operands: bool <= bool
+*** Error at (26,11): incompatible operands: int != bool
+*** Error at (27,11): incompatible operands: int == bool
+*** Error at (28,2): incompatible operands: char += int
+*** Error at (29,5): incompatible operands: char -= int
+*** Error at (30,12): test expression must have bool type
+*** Error at (31,11): test expression must have bool type

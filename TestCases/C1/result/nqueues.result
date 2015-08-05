@@ -1,0 +1,269 @@
+program
+    control line define size
+        intconst 8
+    vardef inttype
+         N
+    vardef inttype
+        * col
+        * row
+        * di1
+        * di2
+    declare: func printBoard voidtype
+        formals
+            formaldef inttype* col
+            formaldef inttype N
+    declare: func try voidtype
+        formals
+            formaldef inttype c
+            formaldef inttype* row
+            formaldef inttype* col
+            formaldef inttype* diag1
+            formaldef inttype* diag2
+            formaldef inttype length
+    func clearArray inttype*
+        formals
+            formaldef inttype* a
+            formaldef inttype length
+        stmtblock
+            vardef inttype
+                 i
+                 init: sub
+                    varref length
+                    intconst 1
+            while
+                geq
+                    varref i
+                    intconst 0
+                stmtblock
+                    assign
+                        indexed
+                            varref a
+                            varref i
+                        intconst 0
+                    suffix_self_sub
+                        varref i
+            return
+                varref a
+    func init voidtype
+        formals
+            formaldef inttype n
+        stmtblock
+            assign
+                varref N
+                varref n
+            assign
+                varref col
+                call clearArray
+                    typecast
+                        inttype*
+                        malloc
+                            mul
+                                varref N
+                                sizeof ( inttype )
+                    varref N
+            assign
+                varref row
+                call clearArray
+                    typecast
+                        inttype*
+                        malloc
+                            mul
+                                varref N
+                                sizeof ( inttype )
+                    varref N
+            assign
+                varref di1
+                call clearArray
+                    typecast
+                        inttype*
+                        malloc
+                            mul
+                                varref N
+                                sizeof ( inttype )
+                    varref N
+            assign
+                varref di2
+                call clearArray
+                    typecast
+                        inttype*
+                        malloc
+                            mul
+                                varref N
+                                sizeof ( inttype )
+                    varref N
+    func solve voidtype
+        formals
+        stmtblock
+            call try
+                intconst 0
+                varref col
+                varref row
+                varref di1
+                varref di2
+                varref N
+    func main voidtype
+        formals
+        stmtblock
+            call init
+                varref size
+            call solve
+    func printBoard voidtype
+        formals
+            formaldef inttype* col
+            formaldef inttype N
+        stmtblock
+            vardef inttype
+                 i
+                 init: intconst 0
+            while
+                les
+                    varref i
+                    varref N
+                stmtblock
+                    vardef inttype
+                         j
+                         init: intconst 0
+                    while
+                        les
+                            varref j
+                            varref N
+                        stmtblock
+                            if
+                                equ
+                                    indexed
+                                        varref col
+                                        varref i
+                                    varref j
+                                stmtblock
+                                    printf
+                                        intconst 1
+                            else
+                                stmtblock
+                                    printf
+                                        intconst 0
+                    printf
+                        stringconst "\n"
+                    suffix_self_add
+                        varref i
+    func try voidtype
+        formals
+            formaldef inttype c
+            formaldef inttype* row
+            formaldef inttype* col
+            formaldef inttype* diag1
+            formaldef inttype* diag2
+            formaldef inttype length
+        stmtblock
+            vardef inttype
+                 N
+                 init: varref length
+                 r
+                 init: intconst 0
+            if
+                equ
+                    varref c
+                    varref N
+                stmtblock
+                    call printBoard
+                        varref col
+                        varref N
+            else
+                stmtblock
+                    while
+                        les
+                            varref r
+                            varref N
+                        stmtblock
+                            if
+                                and
+                                    and
+                                        equ
+                                            indexed
+                                                varref row
+                                                varref r
+                                            intconst 0
+                                        equ
+                                            indexed
+                                                varref diag1
+                                                add
+                                                    varref r
+                                                    varref c
+                                            intconst 0
+                                    equ
+                                        indexed
+                                            varref diag2
+                                            sub
+                                                add
+                                                    varref r
+                                                    sub
+                                                        varref N
+                                                        intconst 1
+                                                varref c
+                                        intconst 0
+                                stmtblock
+                                    assign
+                                        indexed
+                                            varref row
+                                            varref r
+                                        intconst 1
+                                    assign
+                                        indexed
+                                            varref diag1
+                                            add
+                                                varref r
+                                                varref c
+                                        intconst 1
+                                    assign
+                                        indexed
+                                            varref diag2
+                                            sub
+                                                add
+                                                    varref r
+                                                    sub
+                                                        varref N
+                                                        intconst 1
+                                                varref c
+                                        intconst 1
+                                    assign
+                                        indexed
+                                            varref col
+                                            varref c
+                                        varref r
+                                    call try
+                                        add
+                                            varref c
+                                            intconst 1
+                                        varref row
+                                        varref col
+                                        varref diag1
+                                        varref diag2
+                                        varref length
+                                    assign
+                                        indexed
+                                            varref row
+                                            varref r
+                                        intconst 0
+                                    assign
+                                        indexed
+                                            varref diag1
+                                            add
+                                                varref r
+                                                varref c
+                                        intconst 0
+                                    assign
+                                        indexed
+                                            sub
+                                                add
+                                                    add
+                                                        varref diag2
+                                                        varref r
+                                                    sub
+                                                        varref N
+                                                        intconst 1
+                                                varref c
+                                        intconst 0
+                            assign
+                                varref r
+                                add
+                                    varref r
+                                    intconst 1

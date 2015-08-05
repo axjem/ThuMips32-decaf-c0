@@ -1,0 +1,15 @@
+GLOBAL SCOPE:
+    null -> variable  : void*
+    (1,7) -> variable height : float
+    (1,15) -> variable weight : float
+    (3,6) -> function init : int, int, returntype void
+    (8,6) -> function Moo : returntype void
+    (12,6) -> function main : returntype void
+    FORMAL SCOPE OF 'init':
+        (3,15) -> variable @w : int
+        (3,22) -> variable @h : int
+        LOCAL SCOPE:
+    FORMAL SCOPE OF 'Moo':
+        LOCAL SCOPE:
+    FORMAL SCOPE OF 'main':
+        LOCAL SCOPE:
